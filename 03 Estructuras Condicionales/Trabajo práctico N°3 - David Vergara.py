@@ -201,28 +201,28 @@ else:
     if not((mes=="febrero" and 0<dia<=29) or ((mes=="enero" or mes=="marzo" or mes=="mayo" or mes=="julio" or mes=="agosto" or mes=="octubre" or mes=="diciembre")and 0<dia<=31) or ((mes=="abril" or mes=="junio" or mes == "septiembre" or mes == "setiembre" or mes=="noviembre")and 0<dia<=30)):
         print("La fecha ingresada no es válida")
         
-    #Determinar si es invierno o verano según hemisferio:
-    elif (mes == "diciembre" and dia >= 21) or mes == "enero" or mes == "febrero" or (mes == "marzo" and dia<20):
+    #Determinar si es invierno o verano (periodo 21/12 a 20/03) según hemisferio:
+    elif (mes == "diciembre" and dia >= 21) or mes == "enero" or mes == "febrero" or (mes == "marzo" and dia<=20):
         if hemi == "n":
             print("Usted se encuentra en Invierno.")
         else:
             print("Usted se encuentra en Verano.")
 
-    #Determinar si es otoño o primavera según el hemisferio:
-    elif (mes == "marzo" and dia >= 21) or mes == "abril" or mes == "mayo" or (mes == "junio" and dia<20):
+    #Determinar si es otoño o primavera (periodo 21/03 a 20/06) según el hemisferio:
+    elif (mes == "marzo" and dia >= 21) or mes == "abril" or mes == "mayo" or (mes == "junio" and dia<=20):
         if hemi == "n":
             print("Usted se encuentra en Primavera.")
         else:
             print("Usted se encuentra en Otoño.")
 
-    #Determinar si es invierno o verano según hemisferio:
-    elif (mes == "junio" and dia >= 21) or mes == "julio" or mes == "agosto" or ((mes == "septiembre" or mes == "setiembre") and dia<20):
+    #Determinar si es invierno o verano (periodo 21/06 a 20/09) según hemisferio:
+    elif (mes == "junio" and dia >= 21) or mes == "julio" or mes == "agosto" or ((mes == "septiembre" or mes == "setiembre") and dia<=20):
         if hemi == "n":
             print("Usted se encuentra en Verano.")
         else:
             print("Usted se encuentra en Invierno.")
     
-    #Determinar si es otoño o primavera según el hemisferio:
+    #Determinar si es otoño o primavera (periodo restante 21/09 a 20/12)según el hemisferio:
     elif hemi == "n":
             print("Usted se encuentra en Otoño.")
     else:
