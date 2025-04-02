@@ -1,8 +1,9 @@
 #TRABAJO PRÁCTICO N°3 - ESTRUCTURAS CONDICIONALES
 #ALUMNO: VERGARA, DAVID EMANUEL
+#Comisión : 5
 
 #EJERCICIO 1 : Escribir un programa que solicite la edad del usuario. Si el usuario es mayor de 18 años,
-# #deberá mostrar un mensaje en pantalla que diga “Es mayor de edad”.
+#deberá mostrar un mensaje en pantalla que diga “Es mayor de edad”.
 
 edad = int(input("Ingrese su edad: "))
 #Restricción para valores menores a 0:
