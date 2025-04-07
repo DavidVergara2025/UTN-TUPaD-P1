@@ -45,3 +45,25 @@ for i in range (num1+1, num2):
    suma += i
 
 print(f"La suma de los números entre ambos valores(excluyéndolos) es {suma}")
+
+
+#======================================================================================================================
+
+#Ejercicio 4: Elabora un programa que permita al usuario ingresar números enteros y los sume en
+#secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usuario ingrese un 0.
+
+#Se define valor inicial suma en 0 y se comienzan a pedir valores al usuario
+suma = 0
+num = int(input("Ingrese los números enteros que desea sumar (Ingrese 0 para finalizar): "))
+
+#Si el usuario no presiona 0, se van sumando los valores que ingresa, y solicita un nuevo valor:
+
+while num != 0:
+    suma += num
+    num = int(input("Ingrese el siguiente valor, o 0 para finalizar: "))
+
+#Al ingresarse el 0, finaliza el bucle e imprime la suma total:
+print(f"Total acumulado: {suma}")
+
+#======================================================================================================================
+
