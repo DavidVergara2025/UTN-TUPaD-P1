@@ -114,3 +114,38 @@ print(suma)
 
 #======================================================================================================================
 
+#Ejercicio 8: Escribe un programa que permita al usuario ingresar 100 números enteros. Luego, el
+#programa debe indicar cuántos de estos números son pares, cuántos son impares, cuántos son
+#negativos y cuántos son positivos. (Nota: para probar el programa puedes usar una cantidad
+#menor, pero debe estar preparado para procesar 100 números con un solo cambio).
+
+#Se inician los acumuladores en 0 (pares, impares, positivos y negativos, y neutro si es 0):
+par = 0
+impar = 0
+neg = 0
+pos = 0
+neutro = 0
+#Se pide al usuario ingresar 100 números enteros, mediante el bucle for:
+for i in range(1,101):
+    num = int(input(f"Ingrese el {i}° número entero: "))
+    #Se evalúa si es par, y se incrementa la variable correspondiente:
+    if num % 2 == 0:
+        par += 1
+    else:
+        impar += 1
+    #Se evalúa si es positivo negativo, y se incrementa la variable correspondiente:
+    if num < 0:
+        neg +=1
+    elif num > 0:
+        pos += 1
+    else:
+        neutro += 1
+
+#Se muestran en pantalla los totales:
+print(f"""
+Pares: {par}
+Impares: {impar}
+Positivos: {pos}
+Negativos: {neg}
+Neutros: {neutro}
+""")
