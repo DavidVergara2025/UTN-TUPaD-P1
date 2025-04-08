@@ -94,4 +94,23 @@ for i in range(98,0,-2):
 
 #======================================================================================================================
 
+#Ejercicio 7: Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
+#número entero positivo indicado por el usuario.
+
+#Se solicita un número al usuario:
+num = int(input("Ingrese un número entero positivo: "))
+
+#Se restringe entrada de datos a valores positivosy sepide nuevo valor al usuario en caso de corresponder:
+while num <0:
+    print("El valor ingresado no es válido")
+    num = int(input("Ingrese un número entero positivo: "))
+
+#Mediante el bucle for, se realiza la suma de cada número desde el 0 hasta el número ingresado por el usuario, excluyendo ese valor:
+suma = 0
+for i in range(0,num):
+    suma += i
+
+print(suma)
+
+#======================================================================================================================
 
