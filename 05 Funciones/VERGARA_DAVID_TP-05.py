@@ -94,3 +94,16 @@ print(f"{segundos} segundos equivalen a {segundos_a_horas(segundos)} horas")
 
 #----------------------------------------------------------------------------------------------------------------
 
+#Ejercicio 6. Crear una función llamada tabla_multiplicar(numero) que reciba un número como parámetro e 
+# imprima la tabla de multiplicar de ese número del 1 al 10. Pedir al usuario el número y llamar a la función.
+
+#FUNCIONES
+def tabla_multiplicar(numero):
+    for i in range (1,11):
+        print (f"{numero} * {i} = {numero*i}")
+
+#PROGRAMA PRINCIPAL
+#Se solicita el número al usuario
+numero = int(input("Ingrese el número del cual desea ver las tablas del 1 al 10: "))
+#Se llama a la funcion
+tabla_multiplicar(numero)
