@@ -164,4 +164,18 @@ print(f"Su IMC es {calcular_imc(peso, altura):.2f}")
 
 #----------------------------------------------------------------------------------------------------------------
 
+#Ejercicio 9. Crear una función llamada celsius_a_fahrenheit(celsius) que reciba una temperatura en grados Celsius 
+#y devuelva su equivalente en Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el resultado usando 
+# la función.
+
+#FUNCIONES
+def celsius_a_fahrenheit(celsius):
+    F = 9/5*celsius + 32
+    return F
+
+#PROGRAMA PRINCIPAL
+celsius = float(input("Ingrese la temperatura en °C: "))
+print(f"{celsius}°C equivalen a {celsius_a_fahrenheit(celsius)} °F")
+
 #----------------------------------------------------------------------------------------------------------------
+
