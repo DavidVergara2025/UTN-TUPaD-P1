@@ -77,3 +77,20 @@ El perímetro del circulo es de {calcular_perimetro_circulo(radio)}.""")
 
 #----------------------------------------------------------------------------------------------------------------
 
+#Ejercicio 5. Crear una función llamada segundos_a_horas(segundos) que reciba una cantidad de segundos 
+# como parámetro y devuelva la cantidad de horas correspondientes. Solicitar al usuario los segundos y mostrar 
+# el resultado usando esta función.
+
+#FUNCIONES
+def segundos_a_horas(segundos):
+    horas = segundos / 3600
+    return horas
+
+#PROGRAMA PRINCIPAL
+#Se solicita dato a usuario
+segundos = int(input("Ingrese la cantidad de segundos a convertir en horas: "))
+#Se imprime el resultado usando la función
+print(f"{segundos} segundos equivalen a {segundos_a_horas(segundos)} horas")
+
+#----------------------------------------------------------------------------------------------------------------
+
