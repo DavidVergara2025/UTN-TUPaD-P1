@@ -107,3 +107,43 @@ def tabla_multiplicar(numero):
 numero = int(input("Ingrese el número del cual desea ver las tablas del 1 al 10: "))
 #Se llama a la funcion
 tabla_multiplicar(numero)
+
+#----------------------------------------------------------------------------------------------------------------
+
+#Ejercicio 7. Crear una función llamada operaciones_basicas(a, b) que reciba dos números como parámetros y 
+# devuelva una tupla con el resultado de sumarlos, restarlos, multiplicarlos y dividirlos. Mostrar los 
+# resultados de forma clara.
+
+#FUNCIONES
+def operaciones_basicas(a, b):
+    suma = a + b
+    resta = a - b
+    mult = a * b
+    if b == 0:
+        div = "No se puede dividir por 0."
+    else:
+        div = a / b
+    return (suma, resta, mult, div)
+
+def mostrar_resultados(a, b, resultados):
+    print(f"""{a} + {b} = {resultados[0]} 
+{a} - {b} = {resultados[1]}
+{a} * {b} = {resultados[2]}
+{a} / {b} = {resultados[3]}
+""")
+
+#PROGRAMA PRINCIPAL
+#Se solicitan los números al usuario
+a = float(input("Ingrese el 1° número: "))
+b = float(input("Ingrese el 2° número: "))
+
+#Se llaman las funciones. En la segunda función, el argumento "resultados" es la tupla devuelta en la primera función:
+
+operaciones_basicas(a, b)
+mostrar_resultados(a, b, operaciones_basicas(a, b))
+
+#----------------------------------------------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------------------------------------------
