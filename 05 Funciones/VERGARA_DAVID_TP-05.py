@@ -44,12 +44,9 @@ def pedir_dato(dato):
     return informacion
 
 #PROGRAMA PRINCIPAL
-#Se llama la funcion para solicitar datos, con el argumento correspondiente en cada uno
-nombre = pedir_dato("nombre")
-apellido = pedir_dato("apellido")
-edad = pedir_dato("edad")
-residencia = pedir_dato("residencia")
-informacion_personal(nombre, apellido, edad, residencia)
+#Se llama la funcion que imprimirá la informacion personal, utilizando la funcion pedir_dato para completar cada argumento correspondiente
+
+informacion_personal(pedir_dato("nombre"), pedir_dato("apellido"), pedir_dato("edad"), pedir_dato("residencia"))
 
 #----------------------------------------------------------------------------------------------------------------
 
