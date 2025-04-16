@@ -139,8 +139,8 @@ b = float(input("Ingrese el 2° número: "))
 
 #Se llaman las funciones. En la segunda función, el argumento "resultados" es la tupla devuelta en la primera función:
 
-operaciones_basicas(a, b)
-mostrar_resultados(a, b, operaciones_basicas(a, b))
+resultados = operaciones_basicas(a, b)
+mostrar_resultados(a, b, resultados)
 
 #----------------------------------------------------------------------------------------------------------------
 
@@ -150,8 +150,8 @@ mostrar_resultados(a, b, operaciones_basicas(a, b))
 
 #FUNCIONES
 def calcular_imc(peso, altura):
-    IMC = peso / altura**2
-    return IMC
+    imc = peso / altura**2
+    return imc
 
 #PROGRAMA PRINCIPAL
 
