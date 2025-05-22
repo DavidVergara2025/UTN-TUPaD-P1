@@ -68,3 +68,28 @@ def decimal__a_binario(n):
     
 n = int(input("Ingrese en numero entero decimal a convertir: "))
 print(decimal__a_binario(n))
+
+#====================================================================================================
+
+#Ejercicio 5: Implementá una función recursiva llamada es_palindromo(palabra) que reciba una cadena de texto sin espacios ni tildes, 
+# y devuelva True si es un palíndromo o False si no lo es.
+#Requisitos:
+#La solución debe ser recursiva.
+#No se debe usar [::-1] ni la función reversed().
+
+def es_palindromo(palabra):
+    def invertida(palabra):
+        if len(palabra) == 0:
+            return palabra
+        else:
+            return palabra[-1] + invertida(palabra[:-1])
+    return palabra == invertida(palabra)
+
+palabra = input("Ingrese la palabra a evaluar: ").lower()
+if es_palindromo(palabra):
+    print("Es palindromo")
+else:
+    print("No es palindromo")
+
+
+        
