@@ -36,3 +36,47 @@ print(precios_frutas)
 #precios. 
 frutas = list(precios_frutas.keys())
 print(frutas)
+
+#===============================================================================================
+
+#Ejercicio 4: Escribí un programa que permita almacenar y consultar números telefónicos. 
+#• Permití al usuario cargar 5 contactos con su nombre como clave y número como valor. 
+#• Luego, pedí un nombre y mostrale el número asociado, si existe. 
+#Ejemplo:
+# contactos = {"Juan": "123456", "Ana": "987654"}
+# Consultar: "Juan" -> muestra "123456"
+
+agenda = {}
+for i in range(1,6):
+    nombre = input(f'Ingrese el nombre del contacto {i}:\n')
+    numero = input(f'Ingrese el numero de telefono:\n')
+    agenda[nombre] = numero
+
+consulta = input('Ingrese el nombre para conocer el numero registrado:\n')
+if consulta in agenda:    
+    print(f'El numero de {consulta} es {agenda[consulta]}.')
+else:
+    print('El contacto no esta en la lista.')
+
+#===============================================================================================
+
+#Ejercicio 5) Solicita al usuario una frase e imprime: 
+#• Las palabras únicas (usando un set). 
+#• Un diccionario con la cantidad de veces que aparece cada palabra. 
+#Ejemplo:
+#Entrada -> "hola mundo hola"
+# Palabras_unicas: {'hola: 2, 'mundo': 1}
+
+frase = input('Ingrese una frase: \n')
+lista_palabras = frase.split()
+palabras_unicas = set(lista_palabras) #Convierto la lista en un set
+print(palabras_unicas) #Se muestra el set con las palabras unicas
+
+#Recuento de cada palabra en la frase
+recuento = {}
+for palabra in lista_palabras:
+    if palabra in recuento:
+        recuento[palabra] += 1
+    else:
+        recuento[palabra] = 1
+print(recuento)
