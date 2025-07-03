@@ -129,3 +129,47 @@ def main():
 
 main()
 
+#=====================================================================================================================
+
+#Ejercicio 7) Dado dos sets de números, representando dos listas de estudiantes que aprobaron Parcial 1 y Parcial 2:
+#• Mostrá los que aprobaron ambos parciales.
+#• Mostrá los que aprobaron solo uno de los dos.
+#• Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir).
+
+parcial_1 = {1, 2, 6, 7, 10, 13, 15, 18, 19, 20, 24, 26, 28}
+parcial_2 = {2, 3, 5, 6, 7, 9, 11, 13, 17, 18, 19, 20, 22, 23, 25, 26, 27}
+# Estudiantes que aprobaron ambos parciales
+def ambos(parcial_1, parcial_2):
+    ambos = []
+    for i in parcial_1:
+        if i in parcial_2:
+            ambos.append(i)
+    return ambos
+
+# Estudiantes que aprobaron solo uno de los dos
+def solo_uno(parcial_1, parcial_2):
+    solo = []
+    for i in parcial_1:
+        if i not in parcial_2:
+            solo.append(i)
+    for j in parcial_2:
+        if j not in parcial_1:
+            solo.append(j)
+    return solo
+
+# Estudiantes que aprobaron al menos un parcial (sin repetir)
+def al_menos_un_parcial(parcial_1, parcial_2):
+    al_menos_uno = []
+    for i in parcial_1:
+        if i not in parcial_2:
+            al_menos_uno.append(i)
+    for j in parcial_2:
+        if j not in al_menos_uno:
+            al_menos_uno.append(j)
+    al_menos_uno.sort()  # Ordenar la lista para una mejor presentación
+    return al_menos_uno
+
+print("Estudiantes que aprobaron ambos parciales:", ambos(parcial_1, parcial_2))
+print("Estudiantes que aprobaron solo uno de los dos parciales:", solo_uno(parcial_1, parcial_2))
+print("Estudiantes que aprobaron al menos un parcial (sin repetir):", al_menos_un_parcial(parcial_1, parcial_2))
+
