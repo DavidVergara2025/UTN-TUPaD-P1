@@ -80,3 +80,52 @@ for palabra in lista_palabras:
     else:
         recuento[palabra] = 1
 print(recuento)
+
+#=====================================================================================================================
+
+#Ejercicio 6) Permití ingresar los nombres de 3 alumnos, y para cada uno una tupla de 3 notas. Luego, mostrá el promedio de cada alumno. Ejemplo:
+#alumnos = {
+#"Sofía": (10, 9, 8),
+#"Luis": (6, 7, 7)
+#}
+
+#Funcion para ingresar los nombres de los alumnos
+def nombres_alumnos():
+    nombres = []
+    for i in range(3):  
+        nombre = input(f"Ingrese el nombre del alumno N°{i+1}: ")
+        nombres.append(nombre)
+    return nombres
+
+#Funcicon para ingresar las notas de los alumnos
+def notas_alumnos(nombres):
+    alumnos_notas = {}
+    for nombre in nombres:
+        notas = []
+        print(f"Ingrese las notas para {nombre}:")
+        for j in range(3):
+            nota = float(input(f"Nota N°{j+1}: "))
+            notas.append(nota)
+        alumnos_notas[nombre] = tuple(notas)
+    return alumnos_notas
+
+# Función para calcular promedios:
+def calcular_promedios(alumnos_notas):
+    promedios = {}
+    for nombre, notas in alumnos_notas:
+        promedio = sum(notas) / len(notas)
+        promedios[nombre] = promedio
+    return promedios
+
+def main():
+    nombres = nombres_alumnos()
+    print("Nombres de los alumnos:", nombres)
+    alumnos_notas = notas_alumnos(nombres)
+    print("Alumnos y sus notas:", alumnos_notas)
+    promedios = calcular_promedios(alumnos_notas.items())
+    print(f"Promedios de los alumnos: ")
+    for nombre, promedio in promedios.items():
+        print(f"{nombre}: {promedio:.2f}")
+
+main()
+
