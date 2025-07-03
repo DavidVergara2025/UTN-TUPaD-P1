@@ -218,3 +218,68 @@ def menu():
             print("Gracias por usar el sistema. ¡Hasta la próxima!")
             
 menu()
+
+#=====================================================================================================================
+
+#Ejercicio 9) Creá una agenda donde las claves sean tuplas de (día, hora) y los valores sean eventos. Ejemplo:
+#agenda = {
+#    (lunes, "10:00"): "Reunión",
+#    (martes, "15:00"): "Clase de inglés"
+#}
+#Permití consultar qué actividad hay en cierto día y hora.
+
+agenda = {}
+def main():
+    print("Agenda de eventos")
+    while True:
+        print("\nOpciones:")
+        print("1. Agregar evento")
+        print("2. Consultar evento")
+        print("3. Mostrar agenda")
+        print("4. Salir")
+        
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "1":
+            agregar_evento()
+        elif opcion == "2":
+            consultar_evento()
+        elif opcion == "3":
+            if not agenda:
+                print("La agenda está vacía.")
+            else:
+                print("Agenda de eventos:")
+                for clave, evento in agenda.items():
+                    print(f"{clave}: {evento}")
+        elif opcion == "4":
+            print("Adios!")
+            break
+        else:
+            print("Opción no válida, intente nuevamente.")
+    
+def agregar_evento():
+    dia = input("Ingrese el día del evento (ejemplo: lunes): ").lower()
+    hora = input("Ingrese la hora del evento (ejemplo: 10:00): ")
+    evento = input("Ingrese el nombre del evento: ")
+    
+    clave = (dia, hora)
+    agenda[clave] = evento
+    print(f"Evento agregado: {clave} : {evento}")
+
+def consultar_evento():
+    dia = input("Ingrese el día del evento a consultar (ejemplo: lunes): ").lower()
+    hora = input("Ingrese la hora del evento a consultar (ejemplo: 10:00): ")
+    
+    clave = (dia, hora)
+    if clave in agenda:
+        print(f"{clave}: {agenda[clave]}")
+    else:
+        print(f"No hay eventos programados para {clave}. Quiere agregar un nuevo evento? (s/n)")
+        respuesta = input().lower()
+        if respuesta == 's':
+            agregar_evento()
+        else:
+            print("No se agregó ningún evento.")
+
+if __name__ == "__main__":
+    main()
