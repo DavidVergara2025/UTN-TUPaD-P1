@@ -283,3 +283,21 @@ def consultar_evento():
 
 if __name__ == "__main__":
     main()
+
+#=====================================================================================================================
+
+#Ejercicio 10) Dado un diccionario que mapea nombres de países con sus capitales, construí un nuevo diccionario donde:
+#• Las capitales sean las claves.
+#• Los países sean los valores. Ejemplo:
+#original = {'Argentina': 'Buenos Aires', 'Chile': 'Santiago'}
+#invertido = {'Buenos Aires': 'Argentina', 'Santiago': 'Chile'}
+
+claves_por_paises = {'Argentina': 'Buenos Aires', 'Chile': 'Santiago', 'Brasil': 'Brasilia', 'Venezuela': 'Caracas'}
+def invertir(claves_por_paises):
+    invertido = {}
+    for pais in claves_por_paises.keys():
+        capital = claves_por_paises[pais]
+        invertido[capital] = pais
+    return invertido
+invertido = invertir(claves_por_paises)
+print(invertido)
