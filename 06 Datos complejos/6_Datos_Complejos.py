@@ -173,3 +173,48 @@ print("Estudiantes que aprobaron ambos parciales:", ambos(parcial_1, parcial_2))
 print("Estudiantes que aprobaron solo uno de los dos parciales:", solo_uno(parcial_1, parcial_2))
 print("Estudiantes que aprobaron al menos un parcial (sin repetir):", al_menos_un_parcial(parcial_1, parcial_2))
 
+#=====================================================================================================================
+
+#Ejercicio 8) Armá un diccionario donde las claves sean nombres de productos y los valores su stock. Permití al usuario:
+#• Consultar el stock de un producto ingresado.
+#• Agregar unidades al stock si el producto ya existe.
+#• Agregar un nuevo producto si no existe.
+
+productos = {}
+def consultar_stock(productos):
+    print("Ingrese el producto a consultar: ")
+    producto = input().lower()
+    if producto in productos:
+        print(f"El stock de {producto} es {productos[producto]}. ¿Desea agregar más unidades? (s/n)")
+        respuesta = input().lower()
+        if respuesta == 's':
+            agregar_stock(productos, producto)
+        elif respuesta == 'n':
+            print("No se agregaron unidades.")
+    else:
+        print(f"El producto {producto} no existe en el inventario. Desea agregarlo? (s/n)")
+        respuesta = input().lower()
+        if respuesta == 's':
+            agregar_nuevo(productos, producto)
+
+def agregar_stock(productos, producto):
+    unidades = int(input("Ingrese la cantidad de unidades a agregar: "))
+    productos[producto] += unidades
+    print(f"Se han agregado {unidades} unidades al producto {producto}. Nuevo stock: {productos[producto]}")
+
+def agregar_nuevo(productos, producto):
+    unidades = int(input("Ingrese la cantidad de unidades: "))
+    productos[producto] = unidades
+    print(f"Producto {producto} agregado con {unidades} unidades al inventario.")
+
+# Función principal para manejar el menú
+def menu():
+    print("Bienvenido al sistema de gestión de inventario.")
+    while True:
+        consultar_stock(productos)
+        print("\n¿Desea realizar otra operación? (s/n)")
+        respuesta = input().lower()
+        if respuesta != 's':
+            print("Gracias por usar el sistema. ¡Hasta la próxima!")
+            
+menu()
